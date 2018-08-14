@@ -1,18 +1,33 @@
 <ion-header>
   <ion-navbar>
+  <ion-buttons left>
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
+  </ion-buttons>
     <ion-title>Home</ion-title>
+  <ion-buttons right>
+    <button  ion-button icon-end solid (tap)="showAlert()">
+        Help
+        <ion-icon name="help-circle"></ion-icon>
+    </button>
+  </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <h2>Pet Database</h2>
+  <br>
+  <h3>by Harry Robinson</h3>
 
   <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
+    Welcome to Pet Database, an app to record pet and owner contact details. 
   </p>
+  <br>
+  <p>
+    Tap the menu above to browse the current list of pet entries, 
+    or add, edit or delete records from the database 
+    </p>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+
 </ion-content>

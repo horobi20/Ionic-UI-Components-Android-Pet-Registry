@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-navbar>
+  <ion-buttons left>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-buttons>
+    <ion-title>Home</ion-title>
+  <ion-buttons right>
+    <button  ion-button icon-end solid (tap)="showAlert()">
+        Help
+        <ion-icon name="help-circle"></ion-icon>
+    </button>
+  </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h3>Add a Pet</h3>
+
+  <p>
+    Fill out the information below to add a new pet to the database.
+  </p>
+  <br>
+  <p>{{userMsg}}</p>
+  <br>
+  <form (ngSubmit)="submit()">
+  
+   <ion-item>
+   <ion-input type="text" placeholder="Pet Name" [(ngModel)]="newName" name = "name"></ion-input>
+   </ion-item>
+  
+   <ion-list>
+   <ion-item>
+    <ion-label>Species</ion-label>
+    <ion-select [(ngModel)]="newSpecies" name="species" interface= "action-sheet">
+      <ion-option value="dog">Dog</ion-option>
+      <ion-option value="cat">Cat</ion-option>
+      <ion-option value="fish">Fish</ion-option>
+      <ion-option value="bird">Bird</ion-option>
+      <ion-option value="snake">Snake</ion-option>
+      <ion-option value="other">Other</ion-option>
+    </ion-select>
+   </ion-item>
+   </ion-list>
+  
+  <ion-list>
+   <ion-item>
+      <ion-label>Age</ion-label>
+    <ion-range min="0" max="100" step="1" snaps="true" pin="true" [(ngModel)]="newAge" name="age">
+      <ion-label range-left>0</ion-label>
+      <ion-label range-right>100</ion-label>
+    </ion-range>
+   </ion-item>
+   </ion-list>
+
+   <ion-list>
+   <ion-item>
+   <ion-label>
+    Sex
+   </ion-label>
+   <ion-select [(ngModel)]="newSex" name="sex" interface= "action-sheet">
+      <ion-option value="male" >Male</ion-option>
+      <ion-option value="female">Female</ion-option>
+   </ion-select>
+   </ion-item>
+   </ion-list>
+  
+   <ion-item>
+   <ion-input type="text" placeholder="Registration Number" [(ngModel)]="newRego" name="rego"></ion-input>
+   </ion-item>
+  
+   <ion-item>
+   <ion-input type="text" placeholder="Phone Number" [(ngModel)]="newPhone" name="phone"></ion-input>
+   </ion-item>
+   
+
+  <button ion-button block type="submit">Add</button>
+  
+  </form>
+</ion-content>
